@@ -3,7 +3,7 @@
 commit_msg_file=$1
 commit_msg=$(cat $commit_msg_file)
 
-pattern="^ASTONJS-[0-9]+ (feat|fix|chore): .*$"
+pattern="^ASTONJS-[0-9]+ \[(feat|fix|chore)\]: .*$"
 
 if ! [[ $commit_msg =~ $pattern ]]; then
     echo "ERROR: Commit message format is incorrect. It should match pattern: 'ASTONJS-1 [feat/fix/chore]: commit msg'" >&2
