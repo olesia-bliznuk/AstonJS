@@ -1,12 +1,12 @@
-#!/bin/bash
+const fs = require('fs');
 
-commit_msg_file=$1
-commit_msg=$(cat $commit_msg_file)
+const commitMsgFile = process.argv[2];
+const commitMsg = fs.readFileSync(commitMsgFile, 'utf8');
 
-pattern="^ASTONJS-[0-9]+ \[(feat|fix|chore)\]: .*$"
+const pattern = /^ASTONJS-[0-9]+ \[(feat|fix|chore)\]: .*$/
 
-if ! [[ $commit_msg =~ $pattern ]]; then
-    echo "ERROR: Commit message format is incorrect. It should match pattern: 'ASTONJS-1 [feat/fix/chore]: commit msg'" >&2
-    exit 1
-fi
+if (!pattern.test(commitMsg)) {
+    console.error("ERROR: Commit message format is incorrect. It should match pattern: 'ASTONJS-[0-9] [feat/fix/chore]: commit msg'");
+    process.exit(1);
+}
 
