@@ -1,5 +1,10 @@
 function getLength(val) {
-    return (val && val.length !== undefined) ? val.length : 0;
+    if (val && val.length !== undefined)
+        console.log(val.length);
+    else if (val && val.size !== undefined)
+        console.log(val.size);
+    else
+        console.log(0);
 }
 
 function compare(tree1, tree2) {
