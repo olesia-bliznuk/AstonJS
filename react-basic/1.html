@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mainDiv {
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+            height: 100px;
+            font-size: 25px;
+            background-color: #0bbc7254;
+            border-radius: 10px;
+        }
+
+        .mainDiv:hover{
+            border: solid #059914f8 2px;
+        }
+
+        .mainDiv input{
+            height: 30px;
+            width: 180px;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    const body = document.body;
+    const divEl = document.createElement('div');
+    divEl.classList.add('mainDiv');
+    const spanEl = document.createElement('span');
+    spanEl.textContent = 'Task №1'
+    const inputEl = document.createElement('input');
+    divEl.append(spanEl);
+    divEl.append(inputEl);
+    body.append(divEl);
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        const MainDiv = () => {
+            const divStyle = {
+                margin: '10px auto',
+                padding: '10px',
+                width: '200px',
+                height: '100px',
+                fontSize: '25px',
+                backgroundColor: '#0bbc7254',
+                borderRadius: '10px'
+            };
+
+            const inputStyle = {
+                height: '30px',
+                width: '180px',
+                marginTop: '15px',
+                fontSize: '20px'
+            };
+
+            return (
+                <div style={divStyle}>
+                    <span className="task">Task №1</span>
+                    <input type="text" style={inputStyle} />
+                </div>
+            );
+        };
+        ReactDOM.render(<MainDiv />, document.getElementById('react-container'));
+    </script>
+</body>
+</html>
+
